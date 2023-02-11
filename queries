@@ -2,7 +2,7 @@ A) Marketing: The marketing team wants to launch some campaigns, so according to
 1.	Rewarding Most Loyal Users: People who have been using the platform for the longest time. 
 Task: To find the 5 oldest users of the Instagram from the database.
 		Sql Query: 
-		                        >> select username,created_at from users
+		            >> select username,created_at from users
                               order by created_at asc
                               limit 5;
 
@@ -34,7 +34,7 @@ Sql Query:
 
 Task: Identify and suggest the top 5 most commonly used hashtags on the platform
 Sql Query: 
-        		         >> select tags.tag_name, photo_tags.tag_id ,count(*) as total_tags
+        	     >> select tags.tag_name, photo_tags.tag_id ,count(*) as total_tags
                         from tags
                         join photo_tags 
                         on tags.id  =  photo_tags.tag_id
@@ -47,7 +47,7 @@ Sql Query:
 
 Task:   What day of the week do most users register on. 
 Sql Query: 
-      		         >> select dayname(created_at) as day, count(*) as total_register
+      		    >> select dayname(created_at) as day, count(*) as total_register
                       from users
                       group by day
                       order by total_register desc
@@ -59,7 +59,7 @@ B) Investor Metrics: Our investors want to know if Instagram is performing well 
            
 	Task: Provide how many times does average user posts on Instagram.  
              Sql Query: 
-	                      >> select (select count(*) from photos) / (select count(*) from users) 
+	                >> select (select count(*) from photos) / (select count(*) from users) 
                           as average_post;
 
 
